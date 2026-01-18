@@ -99,7 +99,7 @@ const Home = () => {
 
              {/* 右上 */}
              <Link to="/industry" className="group relative overflow-hidden rounded-2xl shadow-lg block min-h-[250px]">
-                 <img src="https://images.unsplash.com/photo-1625246333195-58f214f063ce?q=80&w=1000" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Industry"/>
+                 <img src="/greenchanye.jpg" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Industry"/>
                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                  <div className="absolute bottom-0 left-0 p-8 text-white">
                      <h3 className="text-2xl font-serif font-bold mb-1">绿色产业体系</h3>
@@ -109,7 +109,7 @@ const Home = () => {
 
              {/* 右下 */}
              <Link to="/tours" className="group relative overflow-hidden rounded-2xl shadow-lg block min-h-[250px]">
-                 <img src="https://images.unsplash.com/photo-1533659828570-3692fb4749da?q=80&w=1000" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tours"/>
+                 <img src="/tour.jpg" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tours"/>
                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                  <div className="absolute bottom-0 left-0 p-8 text-white">
                      <h3 className="text-2xl font-serif font-bold mb-1">研学文旅</h3>

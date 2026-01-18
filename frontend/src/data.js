@@ -11,7 +11,7 @@ export const database = {
         name: "刘斌",
         title: "第一任治沙局长",
         tags: ["党员先锋", "拓荒者"],
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400", 
+        avatar: "/liubin.jpg", 
         quote: "如果不把沙治住，就让沙把我们埋掉。",
         content: "<p>这里是刘斌的详细事迹...</p>"
       },
@@ -33,7 +33,7 @@ export const database = {
         name: "董福财",
         title: "林业专家 / 治沙愚公",
         tags: ["科研攻坚", "樟子松之父"],
-        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400",
+        avatar: "/dongfucai.jpg",
         quote: "一生只做一件事，把论文写在大地上。",
         content: "<p>详细事迹...</p>"
       },
@@ -78,7 +78,7 @@ export const database = {
         title: "沙地生金 · 生态农业",
         subtitle: "Ecological Agriculture",
         summary: "依托独特的沙地土壤，打造高品质农产品。", // 入口页显示的短语
-        img: "https://images.unsplash.com/photo-1596568603686-22a832620c32?q=80&w=1000",
+        img: "/shengtainongye.jpg",
         color: "green", // 主题色
         // 详情页的长文介绍 (支持HTML)
         content: `
@@ -100,7 +100,7 @@ export const database = {
         title: "点沙成金 · 硅砂工业",
         subtitle: "Silica Sand Industry",
         summary: "世界级铸造砂基地，变废为宝的工业奇迹。",
-        img: "https://images.unsplash.com/photo-1516937941348-c09e5548324d?q=80&w=1000",
+        img: "/guishacahnye.jpg",
         color: "blue",
         content: `
           <p>彰武县拥有丰富的天然硅砂资源，储量大、品质优。过去，这些沙子是风沙灾害的源头；现在，它们成为了工业生产的“金沙”。</p>
@@ -210,9 +210,32 @@ export const database = {
     // === 3. 团队信息 (About板块) ===
     team: {
       slogan: "以数字技术赋能乡村振兴",
+      // 1. 团队介绍文案 (融合旗帜含义)
+      intro: {
+        title: "旗帜的颜色，是生命的底色",
+        content: `我们的队旗以“生态绿”为主色调，象征着彰武治沙七十载在大漠中播种的希望。
+        旗帜中央的校徽代表着大连理工大学“海纳百川”的胸怀，而周围环绕的金色麦穗与绿色波浪，
+        寓意着我们从渤海之滨来到科尔沁沙地，用青春和汗水，誓将“瀚海”变“绿洲”。
+        这面旗帜，不仅是团队的象征，更是“守绿传薪”精神的具象化。`
+      },
+      // 2. 成员数据 (扩充到10人，建议找点帅气/漂亮的真实照片或者风景照代替)
       members: [
-        { name: "张三", role: "队长 / 统筹", word: "脚踏实地，仰望星空。" },
-        { name: "李四", role: "前端开发", word: "代码改变世界。" },
+        { id: 1, name: "王泽祥", role: "队长 / 统筹", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600", desc: "把舵定向，带领团队穿越风沙。" },
+        { id: 2, name: "刘畅", role: "技术负责人", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600", desc: "用代码构建数字绿洲。" },
+        { id: 3, name: "李子豪", role: "UI 设计", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600", desc: "描绘治沙精神的最美画卷。" },
+        { id: 4, name: "魏龙城", role: "文案策划", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600", desc: "用文字记录每一份感动。" },
+        { id: 5, name: "张圣铭", role: "摄影纪实", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600", desc: "定格光影中的绿色奇迹。" },
+        { id: 6, name: "刘腾予", role: "外联公关", img: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=600", desc: "连接校内外的沟通桥梁。" },
+        { id: 7, name: "冯才瑞", role: "调研组长", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600", desc: "行走在沙地上的丈量者。" },
+        { id: 8, name: "焦冰和", role: "财务后勤", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600", desc: "团队坚实的后盾保障。" },
+        { id: 9, name: "哈哈哈", role: "新媒体", img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600", desc: "让治沙故事传得更远。" },
+        { id: 10, name: "小6猪", role: "数据分析", img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=600", desc: "从数据中挖掘生态价值。" },
+      ],
+      // 3. 过往活动 (Events)
+      activities: [
+        { date: "2024.07", title: "初识大漠", desc: "团队抵达彰武，参观治沙精神纪念馆，确立调研课题。", img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=600" },
+        { date: "2024.08", title: "深入林场", desc: "深入章古台林场，对话第一代治沙人，记录口述历史。", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600" },
+        { date: "2024.12", title: "成果汇报", desc: "完成社会实践报告，获得校级优秀团队称号。", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600" },
       ]
     },
   tours: [
