@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import TourDetail from './pages/TourDetail';
-// 1. 引入布局
-import Layout from './components/Layout';
 
-// 2. 引入所有页面组件 (这才是这一步的关键！)
+// 1. 引入刚才写好的组件
+import ScrollToTop from './components/ScrollToTop';
+
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import Spirit from './pages/Spirit';
 import PersonDetail from './pages/PersonDetail';
 import Industry from './pages/Industry';
-import Tours from './pages/Tours'; // <--- 刚才这里是空的，现在引入真的文件
-import About from './pages/About'; // <--- 刚才这里是空的，现在引入真的文件
+import IndustryDetail from './pages/IndustryDetail'; // 别忘了引入这个详情页
+import Tours from './pages/Tours';
+import TourDetail from './pages/TourDetail';
+import About from './pages/About';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
-  // 开屏动画定时器
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
@@ -24,7 +25,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* === 开屏动画 (全站级别) === */}
+      {/* 2. 把它放在这里！必须在 BrowserRouter 里面，Routes 外面 */}
+      {/* 这样它就能监听所有页面的跳转，每次跳转都自动置顶 */}
+      <ScrollToTop />
+
       <AnimatePresence>
         {loading && (
           <motion.div 
@@ -45,30 +49,17 @@ function App() {
         )}
       </AnimatePresence>
 
-      {/* === 路由配置 === */}
       <Routes>
         <Route path="/" element={<Layout />}>
-          
-          {/* 首页 */}
           <Route index element={<Home />} />
-          
-          {/* 治沙精神 & 人物详情 */}
           <Route path="spirit" element={<Spirit />} />
           <Route path="spirit/people/:id" element={<PersonDetail />} />
-
-          {/* 绿色产业 */}
           <Route path="industry" element={<Industry />} />
-          
-          {/* 全域旅游 (真的地图页面) */}
+          <Route path="industry/:id" element={<IndustryDetail />} />
           <Route path="tours" element={<Tours />} />
-          {/*动态路由 */}
           <Route path="tours/:id" element={<TourDetail />} />
-          {/* 关于我们 (真的团队页面) */}
           <Route path="about" element={<About />} />
-          
-          {/* 404 页面 (兜底) */}
           <Route path="*" element={<div className="pt-32 text-center text-xl">404 - 页面未找到</div>} />
-          
         </Route>
       </Routes>
     </BrowserRouter>

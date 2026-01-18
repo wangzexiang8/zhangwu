@@ -72,17 +72,140 @@ export const database = {
     ],
   
     // === 2. 产业数据 (Industry板块) ===
-    industry: {
-      agriculture: {
-        title: "精品农业",
-        desc: "依托独特的沙地土壤，打造高品质农产品。",
-        items: [
-          { name: "沙地蜜薯", value: "3000吨", feature: "口感软糯，含糖量高" },
-          { name: "有机花生", value: "500万产值", feature: "颗粒饱满，出油率高" }
+    industries: [
+      {
+        id: "primary", // 第一产业
+        title: "沙地生金 · 生态农业",
+        subtitle: "Ecological Agriculture",
+        summary: "依托独特的沙地土壤，打造高品质农产品。", // 入口页显示的短语
+        img: "https://images.unsplash.com/photo-1596568603686-22a832620c32?q=80&w=1000",
+        color: "green", // 主题色
+        // 详情页的长文介绍 (支持HTML)
+        content: `
+          <p>彰武县地处科尔沁沙地南部，曾经是“风沙蔽日”的贫瘠之地。然而，彰武人并没有被恶劣的自然条件吓倒，而是利用沙地透气性好、昼夜温差大的特点，发展出了独具特色的沙地农业。</p>
+          <h3>沙地红薯：甜蜜的奇迹</h3>
+          <p>彰武沙地红薯口感细腻、甜度高，已成为国家地理标志保护产品。每年秋季，红薯丰收的景象成为了沙地上一道金色的风景线。</p>
+          <h3>林下经济：生态与经济双赢</h3>
+          <p>依托百万亩松林资源，大力发展赤松茸等林下菌类种植，既保护了生态，又鼓起了农民的钱袋子。</p>
+        `,
+        // 该产业下的商品/助农链接
+        products: [
+          { name: "彰武沙地蜜薯", price: "¥29.9 / 5斤", img: "https://images.unsplash.com/photo-1574315042628-66299d91a92e?q=80&w=400", link: "#" },
+          { name: "林下赤松茸", price: "¥58.0 / 斤", img: "https://images.unsplash.com/photo-1550995166-51d2f094c656?q=80&w=400", link: "#" },
+          { name: "有机花生油", price: "¥89.0 / 桶", img: "https://images.unsplash.com/photo-1619864234563-74b886915174?q=80&w=400", link: "#" }
         ]
       },
-      // ... 可以继续补充工业和畜牧业
-    },
+      {
+        id: "secondary", // 第二产业
+        title: "点沙成金 · 硅砂工业",
+        subtitle: "Silica Sand Industry",
+        summary: "世界级铸造砂基地，变废为宝的工业奇迹。",
+        img: "https://images.unsplash.com/photo-1516937941348-c09e5548324d?q=80&w=1000",
+        color: "blue",
+        content: `
+          <p>彰武县拥有丰富的天然硅砂资源，储量大、品质优。过去，这些沙子是风沙灾害的源头；现在，它们成为了工业生产的“金沙”。</p>
+          <h3>铸造用砂的世界名片</h3>
+          <p>彰武硅砂具有耐高温、复用率高等特点，被广泛应用于汽车发动机、航空航天等高端铸造领域。目前，彰武已成为全国最大的天然硅砂生产基地。</p>
+          <h3>全产业链发展</h3>
+          <p>从原砂开采到覆膜砂加工，再到3D打印砂型，彰武正在构建一条完整的硅砂产业链，实现了从“卖资源”到“卖技术”的华丽转身。</p>
+        `,
+        companies: [
+          {
+            id: 1,
+            name: "彰武硅砂集团",
+            logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=100", // 替换为真实 Logo
+            front: {
+              desc: "全国最大的天然硅砂开采与加工企业，拥有三大核心矿区。",
+              tag: "龙头企业"
+            },
+            back: {
+              product: "高精密铸造砂",
+              capacity: "年产 200 万吨",
+              partner: "一汽、宝马供应链"
+            }
+          },
+          {
+            id: 2,
+            name: "联信铸造砂业",
+            logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=100",
+            front: {
+              desc: "专注于覆膜砂技术研发，拥有国家级实验室。",
+              tag: "技术创新"
+            },
+            back: {
+              product: "耐高温覆膜砂",
+              capacity: "专利技术 15 项",
+              partner: "航空航天部件铸造"
+            }
+          },
+          {
+            id: 3,
+            name: "永红机械制造",
+            logo: "https://images.unsplash.com/photo-1622675363311-ac22f5e9ce1c?q=80&w=100",
+            front: {
+              desc: "利用硅砂废料进行3D打印砂型生产，实现零排放。",
+              tag: "绿色循环"
+            },
+            back: {
+              product: "3D打印砂型",
+              capacity: "智能制造车间",
+              partner: "高端定制模具"
+            }
+          },
+          {
+            id: 4,
+            name: "宏图精工",
+            logo: "https://images.unsplash.com/photo-1574681615838-8c5054bd794c?q=80&w=100",
+            front: {
+              desc: "专注于出口级硅砂产品，远销日韩及东南亚。",
+              tag: "出口先锋"
+            },
+            back: {
+              product: "高目数擦洗砂",
+              capacity: "出口份额 40%",
+              partner: "丰田、本田"
+            }
+          },
+          {
+            id: 5,
+            name: "大漠建材",
+            logo: "https://images.unsplash.com/photo-1517089152318-42ec560349c0?q=80&w=100",
+            front: {
+              desc: "将风积沙转化为高强度透水砖，助力海绵城市建设。",
+              tag: "变废为宝"
+            },
+            back: {
+              product: "生态透水砖",
+              capacity: "年铺设 50 万平",
+              partner: "市政工程指定供应商"
+            }
+          }
+        ],
+        products: [
+          { name: "精制铸造砂样", price: "展示品", img: "https://images.unsplash.com/photo-1605557202138-097824c3f5c4?q=80&w=400", link: "#" },
+          { name: "硅砂工艺品", price: "¥128.0", img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400", link: "#" }
+        ]
+      },
+      {
+        id: "tertiary", // 第三产业
+        title: "绿水青山 · 全域旅游",
+        subtitle: "Ecological Tourism",
+        summary: "漠上草原，康养胜地，体验治沙精神之旅。",
+        img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000",
+        color: "orange",
+        content: `
+          <p>随着生态环境的改善，彰武县将治沙成果转化为旅游资源，大力发展全域旅游。</p>
+          <h3>漠上草原</h3>
+          <p>在昔日的流动沙丘上，如今生长着茂盛的草场。游客在这里可以体验骑马、射箭、住蒙古包的草原风情。</p>
+          <h3>红色研学</h3>
+          <p>以章古台林场为核心，打造了多条红色研学路线，让游客在游览中感悟“大漠孤烟”变“绿洲新生”的治沙精神。</p>
+        `,
+        products: [
+          { name: "草原景区门票", price: "¥40.0", img: "https://images.unsplash.com/photo-1533659828570-3692fb4749da?q=80&w=400", link: "#" },
+          { name: "研学团预约", price: "咨询客服", img: "https://images.unsplash.com/photo-1503220317375-aaad6143d41b?q=80&w=400", link: "#" }
+        ]
+      }
+    ],
   
     // === 3. 团队信息 (About板块) ===
     team: {
